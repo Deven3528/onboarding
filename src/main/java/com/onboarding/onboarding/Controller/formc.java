@@ -4,11 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import org.thymeleaf.context.Context;
 
 import com.onboarding.onboarding.Dao.UserData;
 import com.onboarding.onboarding.Dao.UserDataRepository;
-
+import com.onboarding.onboarding.email.emailService;
 import com.onboarding.onboarding.service.UTMGenerator;
 
 
@@ -19,6 +19,9 @@ public class formc {
 
     @Autowired
     private UserDataRepository userRepository;
+
+    @Autowired
+    private emailService emailService;
     
 
 
@@ -37,8 +40,8 @@ public class formc {
  
              // Save user data to the database
              UserData user = new UserData();
-             user.setFullName("Deven Surendra Thorat");
-             user.setEmail("Thoratdeven319@gmail.com");
+             user.setFullName("Sushant Pradeep Patil ");
+             user.setEmail("sushant312@gmail.com");
              user.setUtmLink(utmLink);
 
              // Extract the first name 
@@ -46,13 +49,19 @@ public class formc {
              String[] nameParts = fullName.split(" ");
              String firstName = nameParts[0];
              model.addAttribute("userName", firstName);
+             // Email sending
+             Context context = new Context();
+                context.setVariable("userName", fullName);
+                context.setVariable("utmLink", utmLink);
+                context.setVariable("email", email);
+
+                emailService.sendWelcomeEmail("thoratdeven319@gmail.com", "welcome to Community","email",context);
+
              
              
-            
              userRepository.save(user);
  
             
-             // Email sending
              return "dashboad"; // Redirect to dashboard
          } catch (Exception e) {
              e.printStackTrace(); 
