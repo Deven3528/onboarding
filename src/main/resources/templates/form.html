@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--<title>Registration Form in HTML CSS</title>-->
+    <!---Custom CSS File--->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    
+
+
+    <link rel="stylesheet" href="form.css" />
+  </head>
+  <body>
+    <section class="container">
+      <header>Onboarding Form</header>
+      <form action="/Submit" method="post" class="form">
+        <div class="input-box">
+          <label>Full Name</label>
+          <input type="text" id="name" name="full_name" placeholder="Enter full name" required />
+        </div>
+
+        <div class="input-box">
+          <label>Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter email address" required />
+        </div>
+        <div class="column"></div>
+
+        <div class="input-box">
+          <label>Collage/University Name </label>
+          <input type="text" id="Collage" name="college" placeholder="Enter Collage" required />
+        </div>
+        <label for="Year">Year of Graduation</label>
+        <div class="select-box">
+          <select id="year_of_graduation" name="year_of_graduation">
+            <option hidden>Year of Graduation</option>
+            <option>2021</option>
+            <option>2022</option>
+            <option>2023</option>
+            <option>2024</option>
+            <option>2025</option>
+          </select>
+        </div>
+        <div class="input-box">
+          <label>Nearest City</label>
+          <input type="text" id="nearest_city" name="nearest_city" placeholder="Nearest City" required />
+        </div>
+
+
+        <div class="column">
+          <div class="input-box">
+            <label>Phone Number</label>
+            <input type="number" id="phone_number" name="phone_number" placeholder="Enter phone number" />
+          </div>
+          <div class="input-box">
+            <label>Birth Date</label>
+            <input type="date" placeholder="Enter birth date" required />
+          </div>
+        </div>
+
+        <label for="career-challenges">Challenges in your Career :</label>
+        <div class="select-box">
+          <select id="career-challenges" name="career-challenges">
+            <option hidden>Challenges in your Career</option>
+            <option>Entrepreneurship Guidance</option>
+            <option>Hackthones</option>
+            <option>Soft Skills</option>
+            <option>Industry Visit</option>
+            <option>Industry Exposure</option>
+          </select>
+        </div>
+
+        <label for="field_in">Field of Interest :</label>
+        <div class="select-box">
+          <select id="field_of_interest" name="field_of_interest" required>
+            <option hidden>Field of Interest</option>
+            <option>Digital Marketing</option>
+            <option>JAVA</option>
+            <option>Cloud Computing</option>
+            <option>Data Anlytics</option>
+            <option>Artificial Intelligence</option>
+            <option>Android</option>
+          </select>
+        </div>
+
+        <label for="duration">Preferred Internship Duration :</label>
+        <div class="select-box">
+          <select id="preferred_internship_duration" name="preferred_internship_duration" required>
+            <option hidden>Duration</option>
+            <option>6 Weeks</option>
+            <option>8 Weeks</option>
+            <option>12 Weeks</option>
+          </select>
+        </div>
+        
+        <div class="gender-box">
+          <h3>Do you want to be a Campus Ambassador</h3>
+          <div class="gender-option" id="campus_ambassador" name="campus_ambassador">
+            <div class="gender">
+              <input type="radio" id="check-yes" name="gender" checked />
+              <label for="check-male">Yes</label>
+            </div>
+            <div class="gender">
+              <input type="radio" id="check-female" name="gender" />
+              <label for="check-female">NO</label>
+            </div>
+            <div class="gender">
+              <input type="radio" id="check-other" name="gender" />
+              <label for="check-other">May be</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-box address">
+          <label>Expectation from Community</label>
+          <input type="text" placeholder="Expectation"  />
+          
+          <label for="termsAgree" class="terms-label">
+            <input type="checkbox" id="termsAgree" name="termsAgree" required>
+            I agree to the <a href="#" id="terms-link" target="_blank">Terms and Conditions</a>
+          </label>
+
+          
+          
+          
+        <button value="Submit">Submit</button>
+      </form>
+    </section>
+
+     <!-- JavaScript -->
+     <script src="script.js"></script>
+
+  </body>
+</html>
